@@ -1,0 +1,27 @@
+<h1>Listing garments</h1>
+
+<table>
+  <tr>
+    <th>Brand</th>
+    <th>Size</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @garments.each do |garment| %>
+  <tr>
+    <td><%= garment.brand %></td>
+    <td><%= garment.size %></td>
+    <td><%= garment.description %></td>
+    <td><%= link_to 'Show', garment %></td>
+    <td><%= link_to 'Edit', edit_garment_path(garment) %></td>
+    <td><%= link_to 'Destroy', garment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Garment', new_garment_path %>
