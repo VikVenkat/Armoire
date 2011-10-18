@@ -9,9 +9,6 @@
 <div id="main">
 <% if user_signed_in? %>
 <h3> Hello, <%= current_user.id %> </h3>
-<%#= image_tag @pic %>
-
-<%#= getpic_path(:id => current_user.id), :method => :get %>
 
 
 <% else %>
@@ -24,10 +21,14 @@
 
 <% if user_signed_in? %>
 <div id="wardrobe">
->> List your wardrobe
+<%= link_to '>> List your wardrobe', list_path %>
+
 </div>
+
+</br>
+
 <div id="shop">
->> Shop available garments
+<%= link_to '>> Shop available garments', shop_path %>
 </div>
 
 <% end %>

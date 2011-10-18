@@ -1,0 +1,26 @@
+<center>
+<%= image_tag 'armoire.png'%>
+<div id="container">
+
+<h1>The world is your closet.</h1>
+<h2>Borrow clothes from your new and future friends.</h2>
+</br>
+
+--Listing of available garments-- </br>
+<% if @garments.empty? %>
+Sorry, there are no garments to view
+<% else %>
+	<% @garments.each do |garment| %>
+		<div id="shop_garment>
+			<p class="brand">Brand:<%= garment.brand %></p>
+			<li>Size:<%= garment.size %></li>
+			<li>Notes:<%= garment.description %></li>
+			<%= link_to 'Show', garment %> | <%= link_to 'Edit', edit_garment_path(garment) %> | <%= link_to 'Destroy', garment, :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+	<% end %>
+<% end %>
+
+
+</br>
+</br>
+<%= link_to 'Home', root_path %>

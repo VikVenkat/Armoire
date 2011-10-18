@@ -1,5 +1,7 @@
 Armoire::Application.routes.draw do
   get "home/index"
+  get 'home/shop' => 'home#shop', :as => 'shop'
+  get 'home/list' => 'home#list', :as => 'list'
 
   resources :garments
 
