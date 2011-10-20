@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :rentals
   has_many :garments, :through => :rentals
+  #edit this - garments through listings
+  
   
   def self.is_admin?
     if self.is_admin == true
